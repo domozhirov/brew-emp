@@ -1,0 +1,25 @@
+#!/bin/bash
+
+case "$1" in
+"start")
+  sudo brew services start nginx
+  sudo brew services start php56 
+  sudo brew services start redis
+  sudo brew services start memcached
+  ;;
+"stop")
+  sudo brew services stop nginx
+  sudo brew services stop php56 
+  sudo brew services stop redis
+  sudo brew services stop memcached
+  ;;
+"restart")
+  sudo brew services restart nginx
+  sudo brew services restart php56 
+  sudo brew services restart redis
+  sudo brew services restart memcached
+  ;;
+*)
+  echo 'Usage: brew-emp [start | stop | restart]'
+  ;;
+esac
