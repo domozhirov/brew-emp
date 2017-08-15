@@ -3,7 +3,7 @@ brew-emp stop
 
 echo '✩✩✩✩ Uninstall php ✩✩✩✩'
 
-PHP_VERSIONS=( 53 54 55 56 )
+PHP_VERSIONS=( 53 54 55 56 70 71 )
 for PHP_VERSION in "${PHP_VERSIONS[@]}"
 do
   brew remove php"$PHP_VERSION"

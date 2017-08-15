@@ -13,13 +13,13 @@ This script will install and setup **Nginx** + **MySQL** + **PHP** through **Hom
 * [Homebrew](http://mxcl.github.com/homebrew/)
  
 ## Installation
-`curl -L https://raw.github.com/mrded/brew-emp/master/tools/install.sh | bash`
+`curl -L https://raw.github.com/domozhirov/master/tools/install.sh | bash`
 
 ## Uninstall
-`curl -L https://raw.github.com/mrded/brew-emp/master/tools/uninstall.sh | bash`
+`curl -L https://raw.github.com/domozhirov/master/tools/uninstall.sh | bash`
 
 ## Update PHP version
-`curl -L https://raw.github.com/mrded/brew-emp/master/tools/update.sh | bash`
+`curl -L https://raw.github.com/domozhirov/master/tools/update.sh | bash`
 
 ## Usage
 `brew-emp [start | stop | restart]`
@@ -68,11 +68,11 @@ Remote port is 9002
 
 **FastCGI**: `/usr/local/etc/nginx/fastcgi.conf`
 
-**PHP**: `/usr/local/etc/php/5.6/php.ini`
+**PHP**: `/usr/local/etc/php/7.1/php.ini`
 
 **Redis**: `/usr/local/etc/redis.conf`
 
-**Xdebug**: `/usr/local/etc/php/5.6/conf.d/ext-xdebug.ini`
+**Xdebug**: `/usr/local/etc/php/7.1/conf.d/ext-xdebug.ini`
 
 **MySQL**: `/usr/local/etc/my.cnf`
 

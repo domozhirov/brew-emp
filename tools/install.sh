@@ -17,6 +17,8 @@ PHP_VERSIONS=(
   2 "5.4"
   3 "5.5"
   4 "5.6"
+  5 "7.0"
+  6 "7.1"
 )
 
 CHOICE=$(dialog --clear \
@@ -45,12 +47,20 @@ case $CHOICE in
     PHP_VERSION='56'
     PHP_VERSION_WITH_DOT='5.6'
     ;;
+  5)
+    PHP_VERSION='56'
+    PHP_VERSION_WITH_DOT='7.0'
+    ;;
+  6)
+    PHP_VERSION='71'
+    PHP_VERSION_WITH_DOT='7.1'
+    ;;
 esac
 
-echo '✩✩✩✩ MYSQL ✩✩✩✩'
-brew install mysql
+echo '✩✩✩✩ MARIADB ✩✩✩✩'
+brew install mariadb
 #mysql_install_db --verbose --user=`whoami` --basedir="$(brew --prefix mysql)" --datadir=/usr/local/var/mysql --tmpdir=/tmp
-curl -Lo /usr/local/etc/my.cnf https://raw.github.com/mrded/brew-emp/master/conf/mysql/my.cnf
+curl -Lo /usr/local/etc/my.cnf https://raw.github.com/domozhirov/brew-emp/master/conf/mysql/my.cnf
 chmod 644 /usr/local/etc/my.cnf
 
 echo '✩✩✩✩ NGINX ✩✩✩✩'
@@ -59,14 +69,14 @@ brew install --with-passenger nginx
 echo '-> Download configs'
 mkdir /usr/local/etc/nginx/{common,sites-available,sites-enabled}
 
-curl -Lo /usr/local/etc/nginx/nginx.conf https://raw.github.com/mrded/brew-emp/master/conf/nginx/nginx.conf
+curl -Lo /usr/local/etc/nginx/nginx.conf https://raw.github.com/domozhirov/brew-emp/master/conf/nginx/nginx.conf
 
-curl -Lo /usr/local/etc/nginx/common/php https://raw.github.com/mrded/brew-emp/master/conf/nginx/common/php
-curl -Lo /usr/local/etc/nginx/common/drupal https://raw.github.com/mrded/brew-emp/master/conf/nginx/common/drupal
+curl -Lo /usr/local/etc/nginx/common/php https://raw.github.com/domozhirov/brew-emp/master/conf/nginx/common/php
+curl -Lo /usr/local/etc/nginx/common/drupal https://raw.github.com/domozhirov/brew-emp/master/conf/nginx/common/drupal
 
 # Download Virtual Hosts.
-curl -Lo /usr/local/etc/nginx/sites-available/default https://raw.github.com/mrded/brew-emp/master/conf/nginx/sites-available/default
-curl -Lo /usr/local/etc/nginx/sites-available/drupal.local https://raw.github.com/mrded/brew-emp/master/conf/nginx/sites-available/drupal.local
+curl -Lo /usr/local/etc/nginx/sites-available/default https://raw.github.com/domozhirov/brew-emp/master/conf/nginx/sites-available/default
+curl -Lo /usr/local/etc/nginx/sites-available/drupal.local https://raw.github.com/domozhirov/brew-emp/master/conf/nginx/sites-available/drupal.local
 
 ln -s /usr/local/etc/nginx/sites-available/default /usr/local/etc/nginx/sites-enabled/default
 
@@ -122,5 +132,5 @@ do
 done
 
 echo '✩✩✩✩ Brew-emp ✩✩✩✩'
-curl -Lo /usr/local/bin/brew-emp https://raw.github.com/mrded/brew-emp/master/bin/brew-emp
+curl -Lo /usr/local/bin/brew-emp https://raw.github.com/domozhirov/brew-emp/master/bin/brew-emp
 chmod 755 /usr/local/bin/brew-emp
