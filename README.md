@@ -13,13 +13,13 @@ This script will install and setup **Nginx** + **MySQL** + **PHP** through **Hom
 * [Homebrew](http://mxcl.github.com/homebrew/)
  
 ## Installation
-`curl -L https://raw.github.com/domozhirov/master/tools/install.sh | bash`
+`curl -L https://raw.githubusercontent.com/domozhirov/brew-emp/master/tools/install.sh | bash`
 
 ## Uninstall
-`curl -L https://raw.github.com/domozhirov/master/tools/uninstall.sh | bash`
+`curl -L https://raw.githubusercontent.com/domozhirov/brew-emp/master/tools/uninstall.sh | bash`
 
 ## Update PHP version
-`curl -L https://raw.github.com/domozhirov/master/tools/update.sh | bash`
+`curl -L https://raw.githubusercontent.com/domozhirov/brew-emp/master/tools/update.sh | bash`
 
 ## Usage
 `brew-emp [start | stop | restart]`
